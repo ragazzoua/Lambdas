@@ -15,7 +15,7 @@ public class Main {
         Employee jack = new Employee("Jack Hill", 40);
         Employee snow = new Employee("Snow White", 22);
 
-        List<Employee> employees= new ArrayList<>();
+        List<Employee> employees = new ArrayList<>();
         employees.add(john);
         employees.add(tim);
         employees.add(jack);
@@ -28,16 +28,16 @@ public class Main {
 //            }
 //        });
 
-        Collections.sort(employees, ( employee1,  employee2) ->
+        Collections.sort(employees, (employee1, employee2) ->
                 employee1.getName().compareTo(employee2.getName()));
 
-        for (Employee employee: employees){
+        for (Employee employee : employees) {
             System.out.println(employee.getName());
         }
     }
 }
 
-class Employee{
+class Employee {
     private String name;
     private int age;
 
