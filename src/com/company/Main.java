@@ -1,10 +1,8 @@
 package com.company;
 
-import com.company.Employee.UpperContact;
+import com.company.Employee.*;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 public class Main {
@@ -52,6 +50,10 @@ public class Main {
 //
 //        String sillyString = doStringStuff(uc,employees.get(0).getName(), employees.get(1).getName());
 //        System.out.println(sillyString);
+
+        AnotherClass anotherClass = new AnotherClass();
+        String s = anotherClass.doSomething();
+        System.out.println(s);
     }
 
     public final static String doStringStuff(UpperContact uc, String s1, String s2) {
@@ -87,15 +89,15 @@ class Employee {
     interface UpperContact {
         public String upperAndContact(String s1, String s2);
     }
+}
 
-    class AnothrerClass{
-        public String doSomething(){
-            return Main.doStringStuff(new UpperContact() {
-                @Override
-                public String upperAndContact(String s1, String s2) {
-                    return s1.toUpperCase() + s2.toUpperCase();
-                }
-            }, "String1", "String2");
-        }
+class AnotherClass {
+    public String doSomething() {
+        return Main.doStringStuff(new UpperContact() {
+            @Override
+            public String upperAndContact(String s1, String s2) {
+                return s1.toUpperCase() + s2.toUpperCase();
+            }
+        }, "String1", "String2");
     }
 }
