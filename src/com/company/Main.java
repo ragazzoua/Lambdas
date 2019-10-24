@@ -93,14 +93,27 @@ class Employee {
 
 class AnotherClass {
     public String doSomething() {
-        UpperContact uc = (s1, s2) -> {
-            System.out.println("Lambda expressions class is:" + getClass().getSimpleName());
-            String result = s1.toUpperCase() + s2.toUpperCase();
-            return result;
-        };
+//        UpperContact uc = (s1, s2) -> {
+//            System.out.println("Lambda expressions class is:" + getClass().getSimpleName());
+//            String result = s1.toUpperCase() + s2.toUpperCase();
+//            return result;
+//        };
+        int i = 0;
+        {
+            UpperContact uc = new UpperContact() {
+                @Override
+                public String upperAndContact(String s1, String s2) {
+                    return s1.toUpperCase() + s2.toUpperCase();
+                }
+            };
+            System.out.println("The AnotherClass class's name is: " + getClass().getSimpleName());
 
-        System.out.println("The AnotherClass class's name is: " + getClass().getSimpleName());
-        return Main.doStringStuff(uc,"String1","String2");
+            i++;
+            System.out.println("i = " + i);
+
+            return Main.doStringStuff(uc, "String1", "String2");
+        }
+
 
 //        System.out.println("The AnotherClass class's name is: " + getClass().getSimpleName());
 //        return Main.doStringStuff(new UpperContact() {
