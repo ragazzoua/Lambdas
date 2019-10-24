@@ -93,11 +93,15 @@ class Employee {
 
 class AnotherClass {
     public String doSomething() {
-        return Main.doStringStuff(new UpperContact() {
-            @Override
-            public String upperAndContact(String s1, String s2) {
-                return s1.toUpperCase() + s2.toUpperCase();
-            }
-        }, "String1", "String2");
+
+
+//        System.out.println("The AnotherClass class's name is: " + getClass().getSimpleName());
+//        return Main.doStringStuff(new UpperContact() {
+//            @Override
+//            public String upperAndContact(String s1, String s2) {
+//                System.out.println("The AnotherClass class's name is: " + getClass().getSimpleName());
+//                return s1.toUpperCase() + s2.toUpperCase();
+//            }
+//        }, "String1", "String2");
     }
 }
