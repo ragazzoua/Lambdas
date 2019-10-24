@@ -44,6 +44,11 @@ public class Main {
 //            }
 //        }, employees.get(0).getName(), employees.get(1).getName());
 //        System.out.println(sillyString);
+
+        UpperContact uc = ( s1,  s2) -> s1.toUpperCase() + s2.toUpperCase();
+
+        String sillyString = doStringStuff(uc,employees.get(0).getName(), employees.get(1).getName());
+        System.out.println(sillyString);
     }
 
     public final static String doStringStuff(UpperContact uc, String s1, String s2) {
