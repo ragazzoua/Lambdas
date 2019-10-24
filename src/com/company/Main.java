@@ -4,6 +4,7 @@ import com.company.Employee.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 
 public class Main {
 
@@ -20,6 +21,17 @@ public class Main {
         employees.add(tim);
         employees.add(jack);
         employees.add(snow);
+
+
+        employees.forEach(employee -> {
+            System.out.println(employee.getName());
+            System.out.println(employee.getAge());
+        });
+//        for (Employee employee: employees){
+//            System.out.println(employee.getName());
+//            System.out.println(employee.getAge());
+            //new Thread(() -> System.out.println(employee.getAge())).start();
+
 
 ////        Collections.sort(employees, new Comparator<Employee>() {
 ////            @Override
@@ -99,8 +111,9 @@ class AnotherClass {
 //            return result;
 //        };
         int i = 0;
-        UpperContact uc = (s1,s2) -> {
+        UpperContact uc = (s1, s2) -> {
             System.out.println("The lambda expressions class is " + getClass().getSimpleName());
+            System.out.println("i in the lambda expression = " + i);
             String result = s1.toUpperCase() + s2.toUpperCase();
             return result;
         };
@@ -110,15 +123,10 @@ class AnotherClass {
 //                    return s1.toUpperCase() + s2.toUpperCase();
 //                }
 //            };
-            System.out.println("The AnotherClass class's name is: " + getClass().getSimpleName());
-
-            i++;
-            System.out.println("i = " + i);
-
-            return Main.doStringStuff(uc, "String1", "String2");
+        System.out.println("The AnotherClass class's name is: " + getClass().getSimpleName());
 
 
-
+        return Main.doStringStuff(uc, "String1", "String2");
 //        System.out.println("The AnotherClass class's name is: " + getClass().getSimpleName());
 //        return Main.doStringStuff(new UpperContact() {
 //            @Override
@@ -127,5 +135,19 @@ class AnotherClass {
 //                return s1.toUpperCase() + s2.toUpperCase();
 //            }
 //        }, "String1", "String2");
+    }
+
+    public void printValue() {
+
+        int number = 25;
+        Runnable r = () -> {
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException ex) {
+                ex.printStackTrace();
+            }
+            System.out.println("The Value is " + number);
+        };
+        new Thread(r).start();
     }
 }
