@@ -87,4 +87,15 @@ class Employee {
     interface UpperContact {
         public String upperAndContact(String s1, String s2);
     }
+
+    class AnothrerClass{
+        public String doSomething(){
+            return Main.doStringStuff(new UpperContact() {
+                @Override
+                public String upperAndContact(String s1, String s2) {
+                    return s1.toUpperCase() + s2.toUpperCase();
+                }
+            }, "String1", "String2");
+        }
+    }
 }
