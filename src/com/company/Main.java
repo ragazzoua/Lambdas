@@ -93,7 +93,14 @@ class Employee {
 
 class AnotherClass {
     public String doSomething() {
+        UpperContact uc = (s1, s2) -> {
+            System.out.println("Lambda expressions class is:" + getClass().getSimpleName());
+            String result = s1.toUpperCase() + s2.toUpperCase();
+            return result;
+        };
 
+        System.out.println("The AnotherClass class's name is: " + getClass().getSimpleName());
+        return Main.doStringStuff(uc,"String1","String2");
 
 //        System.out.println("The AnotherClass class's name is: " + getClass().getSimpleName());
 //        return Main.doStringStuff(new UpperContact() {
