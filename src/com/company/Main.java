@@ -28,6 +28,9 @@ public class Main {
 //            }
 //        });
 
+        Collections.sort(employees, (Employee employee1, Employee employee2) ->
+                employee1.getName().compareTo(employee2.getName()));
+
         for (Employee employee: employees){
             System.out.println(employee.getName());
         }
