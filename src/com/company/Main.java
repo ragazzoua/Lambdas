@@ -37,17 +37,17 @@ public class Main {
             System.out.println(employee.getName());
         }
 
-        String sillyString = doStringStuff(new UpperContact() {
-            @Override
-            public String upperAndContact(String s1, String s2) {
-             return s1.toUpperCase() + s2.toUpperCase();
-            }
-        }, employees.get(0).getName(), employees.get(1).getName());
-        System.out.println(sillyString);
+//        String sillyString = doStringStuff(new UpperContact() {
+//            @Override
+//            public String upperAndContact(String s1, String s2) {
+//             return s1.toUpperCase() + s2.toUpperCase();
+//            }
+//        }, employees.get(0).getName(), employees.get(1).getName());
+//        System.out.println(sillyString);
     }
 
-    public final static String doStringStuff(UpperContact uc, String s1, String s2){
-        return uc.upperAndContact(s1,s2);
+    public final static String doStringStuff(UpperContact uc, String s1, String s2) {
+        return uc.upperAndContact(s1, s2);
     }
 }
 
